@@ -1,3 +1,4 @@
+// tests
 const { hasCycle } = require('./code');
 
 const graphWithCycle = {
