@@ -1,6 +1,5 @@
 const { hasCycle } = require('./code');
 
-// Define some test graphs
 const graphWithCycle = {
     'a': ['b', 'c'],
     'b': ['a', 'd'],
@@ -15,13 +14,11 @@ const graphWithoutCycle = {
     'd': []
 };
 
-// Tests array with test cases
 const tests = [
     { graph: graphWithCycle, expected: true, description: 'Graph with a cycle' },
     { graph: graphWithoutCycle, expected: false, description: 'Graph without a cycle' }
 ];
 
-// Function to run all tests
 function runTests() {
     tests.forEach((test, index) => {
         const { graph, expected, description } = test;
