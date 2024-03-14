@@ -1,4 +1,4 @@
-// DFS can be implemented recursively and can detect cycles in a graph
+// DFS can be implemented recursively and can detect cycles in a graph.
 function dfsVisit(graph, currentVertex, visited, parent) {
     visited[currentVertex] = true;
 
