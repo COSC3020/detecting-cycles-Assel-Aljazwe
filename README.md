@@ -45,6 +45,16 @@ Given these complexities, the traversal is the dominating factor.
 
 Considering all the components of the algorithm, the worst-case time complexity for detecting cycles using DFS in an undirected graph is $$\Theta(V + E)\$$ This complexity suggests a linear relationship between the algorithm's execution time and the graph's size (quantified by its vertices and edges) as each element is processed no more than once during the traversal in order to detect a cycle.
 
+## **Impact of DFS From Each Vertex**:
+
+Despite starting DFS from each vertex, the overall complexity remains $\Theta(V + E)\$ due to two main reasons:
+
+**Exploring Each Vertex Once**: Even though we start a DFS for every vertex, we only explore each vertex once. This is because once a vertex is marked as "visited", we don't explore it again. Thus preventing re-exploration of visited vertices, regardless of multiple DFS initiations. So, the total effort for all vertices is $O(V)$, which is just like going through a list of all vertices.
+
+**Edges Traversed Atmost Twice**: We might look at each edge twice in the whole process (once from each end if it's an undirected graph). This means we're doing $O(E)$ work for all the edges.
+
+**Main Idea/Point**: The combined complexity of visiting all vertices and traversing all edges, even when initiating DFS multiple times, is equivalent to a single traversal of the graph. The main trick is in marking each vertex as "visited" the first time we see it, this strategy makes the whole process as efficient as if we did one thorough exploration of the entire graph. So, even though it might look like we're starting a new exploration from each vertex, we're actually not repeating any work. It's more like having a checklist for vertices and edges and marking them off as we go through them.
+
 Reference: https://www.geeksforgeeks.org/detect-cycle-in-a-graph/
 
 
